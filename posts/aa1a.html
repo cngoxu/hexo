@@ -1,0 +1,363 @@
+<!DOCTYPE html><html lang="zh-CN" data-default-color-scheme="auto"><head><meta name="baidu-site-verification" content="codeva-Hfzt2zKqJp"><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon.png"><link rel="icon" href="/assets/img/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#2f4154"><meta name="author" content="cngo"><meta name="keywords" content="技术博客, 学习笔记, 生活点滴"><meta name="description" content="参考链接：搭建个人博客 — Hexo+Markdown+Github Pages - 知乎 (zhihu.com) 我是如何创建这个博客的这个博客使用了Hexo 博客框架+Fluid主题+Markdown文档编写。主要过程包括：  安装Hexo博客框架 建立博客文件并部署 下载并更改主题 个性化定制 写作方面  为了防止以后需要重蹈覆辙，本篇文章记录了了博客建立的每一步具体操作，可谓“从零开始使用"><meta property="og:type" content="article"><meta property="og:title" content="搭建个人博客 - Hexo+Markdown+Github Pages"><meta property="og:url" content="https://blog.cngo.rr.nu/posts/aa1a.html"><meta property="og:site_name" content="小驿站主页"><meta property="og:description" content="参考链接：搭建个人博客 — Hexo+Markdown+Github Pages - 知乎 (zhihu.com) 我是如何创建这个博客的这个博客使用了Hexo 博客框架+Fluid主题+Markdown文档编写。主要过程包括：  安装Hexo博客框架 建立博客文件并部署 下载并更改主题 个性化定制 写作方面  为了防止以后需要重蹈覆辙，本篇文章记录了了博客建立的每一步具体操作，可谓“从零开始使用"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://pic4.zhimg.com/80/v2-5345b19a47e3ff994e64d4dce9be5f87_720w.webp"><meta property="og:image" content="https://pic1.zhimg.com/80/v2-d6da77b6987e4f86b246f5d743d44190_720w.webp"><meta property="og:image" content="https://pic3.zhimg.com/80/v2-2f58df1ed53046452f5b662054fa5d5e_720w.webp"><meta property="og:image" content="https://pic4.zhimg.com/80/v2-edd127505a972e446d4050fb2d71408f_720w.webp"><meta property="og:image" content="https://pic2.zhimg.com/80/v2-09d4b26d5c1620497daf6a19c45e0db5_720w.webp"><meta property="og:image" content="https://pic2.zhimg.com/80/v2-c6180d782d1ca815fbe1443415569d31_720w.webp"><meta property="article:published_time" content="2024-06-17T12:48:30.000Z"><meta property="article:modified_time" content="2024-07-11T03:18:45.000Z"><meta property="article:author" content="cngo"><meta property="article:tag" content="Hexo"><meta property="article:tag" content="Fluid"><meta property="article:tag" content="Markdown"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://pic4.zhimg.com/80/v2-5345b19a47e3ff994e64d4dce9be5f87_720w.webp"><title>搭建个人博客 - Hexo+Markdown+Github Pages · 小驿站主页</title><link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css"><link rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css"><link rel="stylesheet" href="/css/main.css"><link id="highlight-css" rel="stylesheet" href="/css/highlight.css"><link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css"><link rel="stylesheet" href="/assets/css/macpanel.css"><link rel="stylesheet" href="/assets/css/code-unfold.css"><link rel="stylesheet" href="/assets/css/cloudedGlass.css"><link rel="stylesheet" href="/assets/css/sidebar.css"><link rel="stylesheet" href="/assets/css/background.css"><link rel="stylesheet" href="/assets/css/common.css"><link rel="stylesheet" href="/assets/css/waline.css"><link rel="stylesheet" href="/assets/css/weather.css"><link rel="stylesheet" href="/assets/css/modal.css"><script id="fluid-configs">var Fluid=window.Fluid||{};Fluid.ctx=Object.assign({},Fluid.ctx);var dntVal,CONFIG={hostname:"blog.cngo.rr.nu",root:"/",version:"1.9.7",typing:{enable:!0,typeSpeed:70,cursorChar:"_",loop:!1,scope:[]},anchorjs:{enable:!0,element:"h1,h2,h3,h4,h5,h6",placement:"left",visible:"hover",icon:""},progressbar:{enable:!1,height_px:3,color:"#29d",options:{showSpinner:!0,trickleSpeed:100}},code_language:{enable:!0,default:"TEXT"},copy_btn:!0,image_caption:{enable:!0},image_zoom:{enable:!0,img_url_replace:["",""]},toc:{enable:!0,placement:"left",headingSelector:"h1,h2,h3,h4,h5,h6",collapseDepth:3},lazyload:{enable:!0,loading_img:"https://butterfly.js.org/img/loading.gif",onlypost:!1,offset_factor:2},web_analytics:{enable:!0,follow_dnt:!0,baidu:null,google:{measurement_id:null},tencent:{sid:null,cid:null},woyaola:null,cnzz:null,leancloud:{app_id:"srGpqnaVsw1DuXDYQD6uHK5z-MdYXbMMI",app_key:"M2dtqJNKzC5cTenvjfQXn3ZP",server_url:"https://api.cngo.rr.nu",path:"window.location.pathname",ignore_local:!0}},search_path:"/local-search.xml",include_content_in_search:!0};CONFIG.web_analytics.follow_dnt&&(dntVal=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,Fluid.ctx.dnt=dntVal&&(dntVal.startsWith("1")||dntVal.startsWith("yes")||dntVal.startsWith("on")))</script><script src="/js/utils.js"></script><script src="/js/color-schema.js"></script><script>// https://api.ip.sb/geoip/
+    var appId = CONFIG.web_analytics.leancloud.app_id;
+    var appKey = CONFIG.web_analytics.leancloud.app_key;
+    var serverUrl = CONFIG.web_analytics.leancloud.server_url;
+
+    function getVisitorInfo(){
+        const url1 = 'https://ip.useragentinfo.com/json';
+        const url2 = 'https://api.uomg.com/api/visitor.info?skey=1';
+
+        // 使用Promise.all来并行处理两个fetch请求  
+        Promise.all([
+            fetch(url1).then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data from URL 1');
+                }
+                return response.json(); // 解析JSON数据  
+            }),
+            fetch(url2).then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data from URL 2');
+                }
+                return response.json(); // 解析JSON数据  
+            })
+        ]).then(([data1, data2]) => {
+                // 在这里，data1和data2分别是两个fetch请求返回的数据  
+                // 你可以根据需要对它们进行整合  
+                // console.log('Data from URL 1:', data1);
+                // console.log('Data from URL 2:', data2);
+
+                // 假设你想将两个对象的数据合并为一个新对象  
+                const combinedData = { ...data1, ...data2 };
+                //console.log('Combined Data:', combinedData);
+                findVisitorInfo(combinedData)
+            })
+            .catch(error => {
+                // 如果有任何一个fetch请求失败，这里会捕获到错误  
+                console.error('Error fetching data:', error);
+            });
+    }
+
+    function findVisitorInfo(info){
+        if(info['desc'] != "success") return;
+        delete info['desc'];
+        delete info['code'];
+
+        const getUrl = `${serverUrl}/1.1/classes/Visitors?where=%7B%22ip%22%3A%22${info['ip']}%22%7D`;
+        fetch(getUrl, {
+            method: 'GET',
+            headers: {
+                'X-LC-Id'     : appId,
+                'X-LC-Key'    : appKey,
+                'Content-Type': 'application/json'
+            }
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json(); // 解析JSON  
+        }).then(data => {
+            let id = data["results"][0] && data["results"][0]['objectId'];
+            saveVisitorInfo(info, id)
+        }).catch(error => {
+            console.error('Error in GET request:', error);
+            // GET请求的错误处理  
+        });
+    }
+
+    function saveVisitorInfo(info, id){
+        var data;
+        if(id){
+            info["count"] = {
+                '__op'  : 'Increment',
+                'amount': 1
+            };
+            data = {
+                "requests": [
+                    {
+                        "method": "PUT",
+                        "path": `/1.1/classes/Visitors/${id}`,
+                        "body": info
+                    }
+                ]
+            }
+        }else{
+            info["count"] = 1;
+            data = {
+                "requests": [
+                    {
+                        "method": "POST",
+                        "path": "/1.1/classes/Visitors",
+                        "body": info
+                    }
+                ]
+            }
+        }
+
+        fetch(`${serverUrl}/1.1/batch`, {
+            method: 'POST',
+            headers: {
+            'X-LC-Id'     : appId,
+            'X-LC-Key'    : appKey,
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).catch(error => {
+            console.error('Error in POST request:', error);
+            // GET请求的错误处理  
+        });
+    }
+    
+    getVisitorInfo()</script><link rel="stylesheet" type="text/css" href="/assets/css/scroll.css"><link rel="stylesheet" type="text/css" href="/assets/css/gradient.css"><link rel="stylesheet" type="text/css" href="/assets/fonts/NotoSerifSC/font.css"><link rel="stylesheet" type="text/css" href="/assets/fonts/icomoon/style.css"><meta name="generator" content="Hexo 7.2.0"></head><body><script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script><script type="text/javascript" src="/assets/js/common.js"></script><style type="text/css">@keyframes spin3D{from{transform:rotate3d(.5,.5,.5,360deg)}to{transform:rotate3d(0)}}#loading{height:100%;background-color:#172d4781;backdrop-filter:saturate(100%) blur(10px);display:flex;justify-content:center;align-items:center;position:fixed;top:0;left:0;right:0;overflow:hidden;z-index:99999999}.spinner-box{width:300px;height:300px;display:flex;justify-content:center;align-items:center;background-color:transparent}.leo{position:absolute;display:flex;justify-content:center;align-items:center;border-radius:50%}.blue-orbit{width:175px;height:175px;border:2px solid #1a91fa;animation:spin3D 3s linear .2s infinite}.green-orbit{width:135px;height:135px;border:2px solid #0fd;animation:spin3D 2s linear 0s infinite}.red-orbit{width:100px;height:100px;border:2px solid #d75151;animation:spin3D 1s linear 0s infinite}.white-orbit-a{width:70px;height:70px;border:1px solid #faf5f5;animation:spin3D 3s linear 0s infinite}.white-orbit-b{width:70px;height:70px;border:1px solid #faf5f5;animation:spin3D 1.5s linear 0s infinite}.nucleus{width:1px;height:1px;border:1px solid #fff;animation:spin3D 1s linear 0s infinite}</style><div id="loading"><div class="spinner-box"><div class="blue-orbit leo"></div><div class="green-orbit leo"></div><div class="red-orbit leo"></div><div class="white-orbit-a leo"></div><div class="white-orbit-b leo"></div><div class="nucleus leo"></div></div></div><script>(function () {
+        const loaded = function () {
+            window.onload = function () {
+                const loader = document.getElementById("loading");
+                loader.className = "fadeout";
+                setTimeout(function () {
+                    loader.style.display = "none";
+                }, 
+                150
+                );
+            }
+        };
+        loaded();
+    })();</script><script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><script>swal("本站公告","本站基于Fluid主题开发，并集成了Pjax无刷新加载功能，默认开启自动播放，如果不需要上述功能，可以在设置中关闭")</script><div id="web_bg" style="background-image:url(/assets/img/wG636.jpg)"></div><header><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/"><strong class="navbar-title">小驿站</strong></a><div id="tp-weather-widget" style="margin-left:0"></div><script>!function(e,t,n,a,i,o,c,r){r=function(){o=t.createElement(n),c=t.getElementsByTagName(n)[0],o.src=i,o.charset="utf-8",o.async=1,c.parentNode.insertBefore(o,c)},e.SeniverseWeatherWidgetObject=a,e[a]||(e[a]=function(){(e[a].q=e[a].q||[]).push(arguments)}),e[a].l=+new Date,e.attachEvent?e.attachEvent("onload",r):e.addEventListener("load",r,!1)}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt(((new Date).getTime()/1e8).toString(),10)),window.SeniverseWeatherWidget("show",{flavor:"slim",location:"WX4FBXXFKE4F",geolocation:!0,language:"zh-Hans",unit:"c",theme:"auto",token:"f31454ed-0bf9-4ea6-9867-1034dfa114ce",hover:"enabled",container:"tp-weather-widget"})</script><button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="/" target="_self"><i class="iconfont icon-home-fill"></i> <span>首页</span></a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="iconfont icon-books"></i> <span>文章</span></a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/archives/" target="_self"><i class="iconfont icon-archive-fill"></i> <span>归档</span> </a><a class="dropdown-item" href="/categories/" target="_self"><i class="iconfont icon-category-fill"></i> <span>分类</span> </a><a class="dropdown-item" href="/tags/" target="_self"><i class="iconfont icon-tags-fill"></i> <span>标签</span></a></div></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="iconfont icon-addrbook"></i> <span>相关</span></a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/about/" target="_self"><i class="iconfont icon-user-fill"></i> <span>关于</span> </a><a class="dropdown-item" href="/comments/" target="_self"><i class="iconfont icon-mail"></i> <span>留言板</span> </a><a class="dropdown-item" href="/about/timeline.html" target="_self"><i class="iconfont icon-line-fill"></i> <span>时间线</span> </a><a class="dropdown-item" href="/about/schedule.html" target="_self"><i class="iconfont icon-plan"></i> <span>工作计划</span></a></div></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="iconfont icon-note"></i> <span>指南</span></a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/page/guide/" target="_self"><i class="iconfont icon-books"></i> <span>学习指南</span> </a><a class="dropdown-item" href="/page/book/" target="_self"><i class="iconfont icon-douban-fill"></i> <span>好书推荐</span> </a><a class="dropdown-item" href="/page/article/" target="_self"><i class="iconfont icon-linkedin-fill"></i> <span>精选好文</span></a></div></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="iconfont icon-th-large"></i> <span>镜像站</span></a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="https://blog.cngo.rr.nu/" target="_self"><i class="iconfont icon-github-fill"></i> <span>主站点</span> </a><a class="dropdown-item" href="https://blogcf.cngo.rr.nu/" target="_self"><i class="iconfont icon-playstation-fill"></i> <span>镜像站1</span> </a><a class="dropdown-item" href="https://blogv.cngo.us.kg/" target="_self"><i class="iconfont icon-mini-program-fill"></i> <span>镜像站2</span> </a><a class="dropdown-item" href="https://bloglc.cngo.rr.nu/" target="_self"><i class="iconfont icon-mini-program-fill"></i> <span>镜像站3</span></a></div></li><li class="nav-item" id="search-btn"><a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search"><i class="iconfont icon-search"></i></a></li><li class="nav-item" id="color-toggle-btn"><a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle"><i class="iconfont icon-dark" id="color-toggle-icon"></i></a></li></ul></div></div></nav><div class="header-inner" style="height:70vh"><div id="banner" class="banner" parallax="true" style="background:transparent no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="banner-text text-center fade-in-up"><div class="h2"><span id="subtitle" data-typed-text="搭建个人博客 - Hexo+Markdown+Github Pages"></span></div><div class="mt-3"><span class="post-meta mr-2"><i class="iconfont icon-author" aria-hidden="true"></i> cngo </span><span class="post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2024-06-17 20:48" pubdate>2024年06月17日 20:48:30</time></span></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 1.7k 字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 14 分钟 </span><span id="leancloud-page-views-container" class="post-meta" style="display:none"><i class="iconfont icon-eye" aria-hidden="true"></i> <span id="leancloud-page-views"></span> 次</span></div></div></div></div></div></div><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><div class="modal fade" id="modalSetting" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">设置</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3" style="display:flex;justify-items:center;flex-direction:row;justify-content:center"><div><label class="switch"><input type="checkbox" id="switch-play" value="0" onclick='switchAlarm("#switch-play")'><div class="slider round"></div></label> <span>自动播放</span></div><div><label class="switch"><input type="checkbox" id="switch-pjax" onclick='switchAlarm("#switch-pjax")'><div class="slider round"></div></label> <span>启用Pjax</span></div><script>function switchAlarm(e){switch(e){case"#switch-play":localStorage.setItem("autoplay",$(e).prop("checked")),json=JSON.parse(localStorage.getItem("metingjs")),json.autoplay=$(e).prop("checked"),localStorage.setItem("metingjs",JSON.stringify(json));break;case"#switch-pjax":localStorage.setItem("enable-pjax",$(e).prop("checked"))}}</script></div></div></div></div></header><main id="container"><div class="container-fluid nopadding-x"><div class="row nomargin-x"><div class="d-none d-lg-block col-lg-2"><div class="side_container" style="margin-right:-1rem;text-align:center"><div class="sidebar-nav"><span class="sidebar-nav-bulletin sidebar-nav-item current">站点信息</span> <span class="sidebar-nav-author sidebar-nav-item">博主简介</span></div><div id="clockdiv" class="sidebar-bulletin" style="text-align:center;display:block"><div style="width:90%;margin:1em"><canvas id="canvas" style="width:100%" height="100" width="700">当前浏览器不支持canvas，请更换浏览器后再试</canvas></div><script src="/assets/js/clock-time.js"></script><div class="site-author animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person"><p class="site-author-name" itemprop="name">news:</p><p class="site-description" itemprop="description">1.新增AI摘要<br>2.修改侧边栏<br>3.增加标签云<br></p></div><nav class="site-state"><div class="site-state-item site-state-posts"><a href="/archives/"><span class="site-state-item-count">36</span> <span class="site-state-item-name">文章</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/"><span class="site-state-item-count">16</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/"><span class="site-state-item-count">44</span> <span class="site-state-item-name">标签</span></a></div></nav></div><div class="text-center sidebar-author" style="text-align:center;display:none"><div class="about-avatar" style="margin:auto;width:auto;height:auto"><img src="/img/avatar.png" srcset="https://butterfly.js.org/img/loading.gif" lazyload class="img-fluid" alt="avatar" style="width:50%;height:50%"></div><div class="about-info" style="text-align:center"><div class="about-name" style="font-size:1.5rem">cngo</div><div class="about-intro" style="text-align:justify;font-size:.85rem;margin:0 1rem .5rem 1rem">很荣幸您能访问我的网站！目前我仍在学习中，每天抽出时间来看书学习，励志成为一个技术很牛的程序员。</div><div class="links-of-author animated" style="display:flex;font-size:.85rem"><span class="links-of-author-item"><a href="https://github.com/cngoxu" title="GitHub → https://github.com/cngoxu" rel="noopener me" target="_blank"><i class="iconfont icon-github-fill"></i>GitHub</a> </span><span class="links-of-author-item"><a href="mailto:cngoxu@gmail.com" title="E-Mail → mailto:cngoxu@gmail.com" rel="noopener me" target="_blank"><i class="iconfont icon-mail"></i>E-Mail</a></span></div></div></div></div><aside class="sidebar" style="margin-right:-1rem;left:5rem"><div class="side_container"><div class="sidebar-reading" style="text-align:center"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i> <span>目录</span></p><div class="toc-body" id="toc-body"></div></div></div><div class="side_container" style="display:block;padding:1rem .2rem 1rem 1rem"><span class="widget-title" style="font-weight:700;font-size:1em">标签云</span><ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CDN/" rel="tag">CDN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSDN/" rel="tag">CSDN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/" rel="tag">Chrome</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cloudflare/" rel="tag">Cloudflare</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fluid/" rel="tag">Fluid</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/" rel="tag">Github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/" rel="tag">Google</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LinuxDeploy/" rel="tag">LinuxDeploy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Root/" rel="tag">Root</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Termux/" rel="tag">Termux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/U%E7%9B%98/" rel="tag">U盘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WordPress/" rel="tag">WordPress</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zerotrust/" rel="tag">Zerotrust</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dfs/" rel="tag">dfs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reCAPTCHA/" rel="tag">reCAPTCHA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8B%E8%BD%BD/" rel="tag">下载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%BB%E9%A2%98/" rel="tag">主题</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%9F%E5%90%8D/" rel="tag">域名</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E6%A0%B9%E5%A0%86/" rel="tag">大根堆</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A4%8D%E7%89%A9%E5%A4%A7%E6%88%98%E5%83%B5%E5%B0%B8/" rel="tag">植物大战僵尸</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B3%A8%E8%A7%A3/" rel="tag">注解</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%89%9B%E5%AE%A2%E7%BD%91/" rel="tag">牛客网</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%97%85%E6%AF%92/" rel="tag">病毒</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" rel="tag">类与对象</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E6%98%93%E4%BA%91/" rel="tag">网易云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/" rel="tag">自动更新</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%84%E8%AE%BA/" rel="tag">评论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%93%BE%E8%A1%A8/" rel="tag">链表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%85%E8%AF%BB/" rel="tag">阅读</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9B%86%E5%90%88/" rel="tag">集合</a><span class="tag-list-count">1</span></li></ul><style>.tag-list-count{vertical-align:super;font-size:.6rem}.tag-list-item{font-size:.8rem;display:inline-block;white-space:normal;word-break:break-word}</style></div><div class="side_container" style="text-align:center"><div class="sidebar-nav"><span class="sidebar-nav-related sidebar-nav-item current">相关文章</span> <span class="sidebar-nav-latest sidebar-nav-item">最新文章</span></div><div class="category-bar sidebar-related" style="display:block"><div class="category-list"><div class="category-collapse collapse show" id="collapse-c00d1eb68b529768ba98c975c76a9b66" role="tabpanel" aria-labelledby="heading-c00d1eb68b529768ba98c975c76a9b66"><div class="category-post-list"><a href="/posts/da68.html" title="hexo自动更新文章修改时间" class="list-group-item list-group-item-action"><span class="category-post" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">hexo自动更新文章修改时间</span> </a><a href="/posts/428a.html" title="使用GitHub Actions自动编译部署hexo博客" class="list-group-item list-group-item-action"><span class="category-post" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">使用GitHub Actions自动编译部署hexo博客</span> </a><a href="/posts/d022.html" title="Fluid主题文章页面调整" class="list-group-item list-group-item-action"><span class="category-post" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Fluid主题文章页面调整</span> </a><a href="/posts/5a77.html" title="个人博客主题美化" class="list-group-item list-group-item-action"><span class="category-post" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">个人博客主题美化</span> </a><a href="/posts/aa0c.html" title="一些建站主题 | WordPress | Hexo" class="list-group-item list-group-item-action"><span class="category-post" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">一些建站主题 | WordPress | Hexo</span> </a><a href="/categories/%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B/Hexo/" class="list-group-item list-group-item-action"><span class="category-post">More...</span></a></div></div></div></div><div class="category-bar sidebar-latest" style="display:none"><div class="list-group"><a href="/posts/8589.html" class="list-group-item list-group-item-action"><time style="flex:0 0 auto">09-15</time><div class="list-group-item-title">css选择器</div></a><a href="/posts/6ff9.html" class="list-group-item list-group-item-action"><time style="flex:0 0 auto">09-01</time><div class="list-group-item-title">Java注解</div></a><a href="/posts/3e6e.html" class="list-group-item list-group-item-action"><time style="flex:0 0 auto">08-25</time><div class="list-group-item-title">【牛客】BM48数据流中的中位数</div></a><a href="/posts/36e2.html" class="list-group-item list-group-item-action"><time style="flex:0 0 auto">08-25</time><div class="list-group-item-title">【牛客】BM38在二叉树中找到两个节点的最近公共祖先</div></a><a href="/posts/7a58.html" class="list-group-item list-group-item-action"><time style="flex:0 0 auto">08-15</time><div class="list-group-item-title">【牛客】BM30二叉搜索树与双向链表</div></a></div></div></div></aside><script src="/assets/js/sidebar.js"></script></div><div class="col-lg-8 nopadding-x-md"><div class="container nopadding-x-md" id="board-ctn"><div id="board"><article class="post-content mx-auto"><h1 id="seo-header">搭建个人博客 - Hexo+Markdown+Github Pages</h1><p id="updated-time" class="note note-info" style="display:none">本文最后更新于 2024-07-11T11:18:45+08:00</p><div class="note note-primary"><strong>AI摘要：</strong><br><p id="ai-output" style="text-align:justify;white-space:pre-wrap"></p></div><script src="/assets/js/summary.js" defer="defer"></script><div class="markdown-body"><p>参考链接：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/514982831?utm_id=0">搭建个人博客 — Hexo+Markdown+Github Pages - 知乎 (zhihu.com)</a></p><h2 id="我是如何创建这个博客的"><a href="#我是如何创建这个博客的" class="headerlink" title="我是如何创建这个博客的"></a>我是如何创建这个博客的</h2><p>这个博客使用了<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a> 博客框架+<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/">Fluid</a>主题+Markdown文档编写。主要过程包括：</p><ol><li>安装Hexo博客框架</li><li>建立博客文件并部署</li><li>下载并更改主题</li><li>个性化定制</li><li>写作方面</li></ol><p>为了防止以后需要重蹈覆辙，本篇文章记录了了博客建立的每一步具体操作，可谓“从零开始使用Hexo搭建博客”。此功略亦可供他人参考。</p><h2 id="Hexo博客框架安装"><a href="#Hexo博客框架安装" class="headerlink" title="Hexo博客框架安装"></a>Hexo博客框架安装</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a> 是一款快速简洁高效的博客框架，可支持本地、远端服务器运行以及使用Github Page功能进行托管，是用于捣鼓自己的笔记和写文章发布的利器。Hexo是基于Node.js的服务，因此首先需要下载<a target="_blank" rel="noopener" href="http://nodejs.org/">Node.js</a>, 以及<a target="_blank" rel="noopener" href="http://git-scm.com/">Git</a>（用于后续拉取文件）。之后的过程，可完全根据<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo官方建站文档</a>一步步完成。</p><blockquote><p>在使用hexo命令时，请使用windows自带的命令行，而不是power shell。</p></blockquote><h3 id="建立博客文件并部署"><a href="#建立博客文件并部署" class="headerlink" title="建立博客文件并部署"></a>建立博客文件并部署</h3><p>可完全根据<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo官方建站文档</a>一步步完成，建议nodejs版本18以上。</p><h3 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h3><p>安装完毕hexo，此时可以选择一个空文件夹建立博客站点框架，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo init &lt;folder&gt;<br>$ <span class="hljs-built_in">cd</span> &lt;folder&gt;<br>$ npm install<br></code></pre></td></tr></table></figure><blockquote><p>执行后Hexo将会在<code>&lt;folder&gt;</code>文件夹建立站点文件。若 <code>&lt;folder&gt;</code>为空，将在目前文件夹建立站点。</p></blockquote><p>此时，指定文件夹将会出现如下文件目录：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs text">.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br>|   ├── _drafts<br>|   └── _posts<br>└── themes<br></code></pre></td></tr></table></figure><p>其中，有几个文件极为重要：</p><ul><li><code>_config.yml</code> 该文件为网站配置信息，包括网站标题、作者、时间、语言、主题等重要配置和功能。</li><li><code>source/_posts/*.md</code><br><code>source</code> 文件夹为博文的资源文件夹，其中的<code>_posts</code>文件夹储存了<code>markdown</code>文件为网站博文。</li><li><code>themes</code> 文件夹储存了第三方主题。</li></ul><h3 id="建立博文"><a href="#建立博文" class="headerlink" title="建立博文"></a>建立博文</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">$ hexo new &quot;welcome&quot;<br></code></pre></td></tr></table></figure><p>此时 <code>/source/_posts</code> 文件夹中建立了 <code>welcome.md</code> 文件。接着运行</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">$ hexo server<br></code></pre></td></tr></table></figure><p>此时命令行提示</p><p><img src="https://pic4.zhimg.com/80/v2-5345b19a47e3ff994e64d4dce9be5f87_720w.webp" srcset="https://butterfly.js.org/img/loading.gif" lazyload alt="img"></p><p>说明网站已成功在本地部署。浏览器访问 <code>http://localhost:4000/</code> ，显示网站界面如下：</p><p><img src="https://pic1.zhimg.com/80/v2-d6da77b6987e4f86b246f5d743d44190_720w.webp" srcset="https://butterfly.js.org/img/loading.gif" lazyload alt="img"></p><p>此时网站在本地部署成功！</p><blockquote><p>可在命令行执行Crtl+C 停止网站运行。</p></blockquote><h3 id="Github部署"><a href="#Github部署" class="headerlink" title="Github部署"></a>Github部署</h3><p>不推荐用Hexo官方的基于Travis CI的部署方式，虽然自动化程度高但对新手不友好。</p><p>可以直接使用基于github pages的部署方式。首先在github账号下建立名为<del>&lt;github 用户名&gt;.github.io</del>（随意名字即可）的仓库（这将是之后的访问网址），可以使用readme.md进行初始化。之后设置ssh登录。在cmd命令行中输入：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">$ ssh-keygen -t rsa -C &quot;GitHub注册邮箱&quot;<br></code></pre></td></tr></table></figure><p>直接三个回车，不需要密码。这时在 <code>C:/Users/&lt;用户名&gt;/.ssh</code> 文件夹下会建立公钥 <code>id_rsa.pub</code> 文件，将<code>id_rsa.pub</code> 文件中内容全部复制。打开<a target="_blank" rel="noopener" href="https://github.com/settings/keys">Github Settings keys</a> 页面，新建new SSH key，填写任意title（hexo blog）和刚才复制的公钥信息，并Add SSH key，结果如下：</p><p>结果如下：</p><p><img src="https://pic3.zhimg.com/80/v2-2f58df1ed53046452f5b662054fa5d5e_720w.webp" srcset="https://butterfly.js.org/img/loading.gif" lazyload alt="img"></p><p>此时打开Git Bash，输入：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">$ ssh git@github.com<br></code></pre></td></tr></table></figure><p>显示：</p><p><img src="https://pic4.zhimg.com/80/v2-edd127505a972e446d4050fb2d71408f_720w.webp" srcset="https://butterfly.js.org/img/loading.gif" lazyload alt="img"></p><p>说明ssh设置成功。</p><blockquote><p>不使用ssh登录的方式会导致后续部署失败。</p></blockquote><p>这时回到博客文件夹，在 <code>_config.yml</code> 文件中修改deploy块的信息（这里 <code>zswzy</code> 是我的git用户名，记得修改）：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">deploy:<br>  type: git<br>  repo: git@github.com:&#123;github用户名&#125;/&#123;仓库名&#125;.git<br>  branch: main<br></code></pre></td></tr></table></figure><blockquote><p>deploy信息中的branch值应为github的默认分支。老版本的github默认分支为master，新版本的统一改为了main。最好在github中检查一下默认分支名称。<br>很多教程中使用了 <code>https</code> 带头的仓库地址，但这会经常导致 <code>Spawn failed</code> 的error。解决方法就是使用这里示范的git带头的地址，并且这完美适用于我们前期设定的ssh密钥。</p></blockquote><p>在博客文件夹下打开命令行，安装Git部署插件：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">$ npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure><p>最后部署整个博客：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">$ hexo clean<br>$ hexo generate<br>$ hexo deploy<br></code></pre></td></tr></table></figure><p>此时主目录下出现</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">.deploy_git<br></code></pre></td></tr></table></figure><p>文件夹，该文件夹与github仓库中的文件一致，为页面文件。此时访问 <code>Github用户名.github.io</code> 即可打开博客网页。</p><blockquote><p>每次部署完，Github通常需要几分钟更新网站，此时多刷新几次网站即可。</p></blockquote><h2 id="下载并更改主题"><a href="#下载并更改主题" class="headerlink" title="下载并更改主题"></a>下载并更改主题</h2><p>默认主题为landscape（如上节末尾的图片）。本博客使用第三方Fluid主题，简洁美观。使用第三方主题的基本方法是先下载对应主题（可在Hexo<a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题</a>网站上找到），将其放入<code>themes</code> 文件夹，之后在<code>_config.yml</code> 文件中的 <code>theme</code> 块更改名字为对应主题。</p><p>可以在<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">fluid-dev&#x2F;hexo-theme-fluid: :ocean: 一款 Material Design 风格的 Hexo 主题 &#x2F; An elegant Material-Design theme for Hexo (github.com)</a>找到Fluid主题的官方安装教程。</p><h2 id="个性化定制"><a href="#个性化定制" class="headerlink" title="个性化定制"></a>个性化定制</h2><p>可在hexo以及主题各自的的<code>_config.yml</code>文件中更改各项参数，如作者，封面图片等。这些文件基本是自成说明文档的。</p><h2 id="写作方面"><a href="#写作方面" class="headerlink" title="写作方面"></a>写作方面</h2><p>使用markdown的写作规范，包含以下功能：</p><h3 id="文件头规范"><a href="#文件头规范" class="headerlink" title="文件头规范"></a>文件头规范</h3><p>使用— — 的模块，如</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs text">---<br>title: test<br>date: 2022-01-11 15:17:25<br>tags:<br>index_img: /img/thumb-1920-991454.jpg<br>banner_img: /img/thumb-1920-991454.jpg<br>description：<br>---<br></code></pre></td></tr></table></figure><ul><li><code>index_img</code> 是在博客主页显示的博文缩略图。</li><li><code>banner_img</code> 是显示在文章页上方的大图。图片相对路径是从主目录下的<code>source</code> 开始算起的。如引用<code>source</code> 文件夹下的<code>test.jpg</code> 图片，可直接写为 <code>/test.jpg</code> 。</li><li><code>description</code> 是在博客首页显示的文章摘要。</li></ul><blockquote><p>也可用链接形式直接使用网络图片。</p></blockquote><h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>可采用</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">```&lt;language&gt; ```<br></code></pre></td></tr></table></figure><p>风格的代码模式，如使用python代码：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs text">```python<br>def main():<br>    foo()<br>    print(&quot;python&quot;)<br>```<br></code></pre></td></tr></table></figure><p>效果如下：</p><p><img src="https://pic2.zhimg.com/80/v2-09d4b26d5c1620497daf6a19c45e0db5_720w.webp" srcset="https://butterfly.js.org/img/loading.gif" lazyload alt="img"></p><blockquote><p>若使用Fluid主题，可以在主题的config文件中开启代码行号显示和一键copy功能。</p></blockquote><p>行间代码使用</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">` &lt;code&gt; `<br></code></pre></td></tr></table></figure><p>用两个&#96; 单引号包围起来。</p><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>与markdown写作一样，可使用本地或者在线的。</p><h3 id="注释块"><a href="#注释块" class="headerlink" title="注释块"></a>注释块</h3><p>使用bootstrap风格提示块：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">&#123;% note [class] [no-icon] [summary] %&#125;<br>Any content (support inline tags too).<br>&#123;% endnote %&#125;<br></code></pre></td></tr></table></figure><ul><li>[class] : 可选参数。可选值: default | primary | success | info | warning | danger.</li><li>[no-icon] : 可选参数。 Disable icon in note.</li><li>[summary] : 可选参数。 Optional summary of the note.</li></ul><p><img src="https://pic2.zhimg.com/80/v2-c6180d782d1ca815fbe1443415569d31_720w.webp" srcset="https://butterfly.js.org/img/loading.gif" lazyload alt="img"></p><h3 id="Latex公式块"><a href="#Latex公式块" class="headerlink" title="Latex公式块"></a>Latex公式块</h3><p>使用Fluid主题的Latex公式需要注意公式引擎和渲染器，具体配置过程可以参考<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#latex-%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F">这里</a>。</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">$$<br>F[f](0) = \frac&#123;1&#125;&#123;T&#125;\int_0^T f(x)dx<br>$$<br></code></pre></td></tr></table></figure><p>$$<br>F<a href="0">f</a> &#x3D; \frac{1}{T}\int_0^T f(x)dx<br>$$</p></div><hr><div><div class="post-metas my-3"><div class="post-meta mr-3 d-flex align-items-center"><i class="iconfont icon-category"></i> <span class="category-chains"><span class="category-chain"><a href="/categories/%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B/" class="category-chain-item">相关教程</a> <span>></span> <a href="/categories/%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B/Hexo/" class="category-chain-item">Hexo</a></span></span></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="/tags/Hexo/" class="print-no-link">#Hexo</a> <a href="/tags/Fluid/" class="print-no-link">#Fluid</a> <a href="/tags/Markdown/" class="print-no-link">#Markdown</a></div></div><div class="license-box my-3"><div class="license-title"><div>搭建个人博客 - Hexo+Markdown+Github Pages</div><div>https://blog.cngo.rr.nu/posts/aa1a.html</div></div><div class="license-meta"><div class="license-meta-item"><div>作者</div><div>cngo</div></div><div class="license-meta-item license-meta-date"><div>发布于</div><div>2024年6月17日</div></div><div class="license-meta-item"><div>许可协议</div><div><a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/"><span class="hint--top hint--rounded" aria-label="BY - 署名"><i class="iconfont icon-by"></i></span></a></div></div></div><div class="license-icon iconfont"></div></div><div class="post-prevnext my-3"><article class="post-prev col-6"><a href="/posts/557a.html" title="Linux Deploy 自定义配置 Ubuntu20.04.6LTS(focal)"><i class="iconfont icon-arrowleft"></i> <span class="hidden-mobile">Linux Deploy 自定义配置 Ubuntu20.04.6LTS(focal)</span> <span class="visible-mobile">上一篇</span></a></article><article class="post-next col-6"><a href="/posts/7032.html" title="一个U盘病毒解决日志"><span class="hidden-mobile">一个U盘病毒解决日志</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></article></div></div><article id="comments" lazyload><div id="waline"></div><script type="text/javascript">function getPath(path){
+        if(path.endsWith("/index.html")){
+            return path.slice(0,-10);
+        }
+        if(path.endsWith(".html")){
+            return path.slice(0,-5);
+        }
+        return path;
+    }
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://cdn.staticfile.org/waline/2.15.5/waline.min.css')
+      Fluid.utils.createScript('https://cdn.staticfile.org/waline/2.15.5/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline.cncom.dynv6.net","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":3},
+          {
+            el: '#waline',
+            path: getPath(window.location.pathname),
+            //reaction: true, // 开启反应
+            //pageview: true, // 浏览量统计
+            // comment: true, // 评论数统计
+            locale: {
+              placeholder: '欢迎光临小驿站'//,
+            //   level0: '潜水',
+            //   level1: '冒泡',
+            //   level2: '吐槽',
+            //   level3: '活跃',
+            //   level4: '话痨',
+            //   level5: '传说',
+            }
+            //locale: {"placeholder":"快找个位置随便坐^-^（填写邮箱📬可以在评论被回复后收到邮件通知哦~评论系统国内加载可能有亿点儿慢🤣，请见谅哈！）","nick":"昵称(必填)","sofa":"寂寞如雪，快来个人~"}
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });</script><noscript>Please enable JavaScript to view the comments</noscript></article></article></div></div></div></div></div><script src="/js/code-unfold.js"></script><div id="tools"><a id="setting-button" role="button" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSetting" data-pjax-state="external"><i class="iconfont icon-switch-fill" aria-hidden="true"></i> </a><a id="scroll-top-button" aria-label="TOP" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a></div></main><footer><div class="footer-inner"><div class="footer-content"><div><span>© 2024 <a class="hover:underline" href="https://blog.cngo.rr.nu" target="_blank">cngoのblog</a></span></div><div><span class="icon-MOE"></span> <a href="https://icp.gov.moe/?keyword=20240658" target="_blank">萌ICP备20240658号</a> | <a class="hover:underline" href="https://travel.moe/go.html?travel=on" title="异次元之旅-跃迁-我们一起去萌站成员的星球旅行吧！" target="_blank">异次元之旅</a></div><div><span id="timeDate">正在载入天数...</span> <span id="times">载入时分秒...</span><script src="/assets/js/duration.js"></script></div><div id="hitokoto">:D 获取中...</div><script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" id="yiyan" defer="defer"></script><div><span>Powered by </span><a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a></div></div><div class="statistics"><span id="leancloud-site-pv-container" style="display:none">总访问量 <span id="leancloud-site-pv"></span> 次 </span><span id="leancloud-site-uv-container" style="display:none">总访客数 <span id="leancloud-site-uv"></span> 人</span></div></div></footer><script src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js"></script><script src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js"></script><script src="/js/events.js"></script><script src="/js/plugins.js"></script><script src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js"></script><script data-pjax>(function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      
+      var text = subtitle.getAttribute('data-typed-text');
+      if(location.pathname === "/" || location.pathname === "/index.html"){
+        
+        
+        jQuery.ajax({
+          type: 'GET',
+          url: 'https://api.xygeng.cn/one',
+          headers: {},
+          dataType: 'json',
+          success: function(result) {
+            var apiText;
+            if (result) {
+              var keys = 'data,content'.split(',');
+              if (result instanceof Array) {
+                result = result[0];
+              }
+              for (const k of keys) {
+                var value = result[k];
+                if (typeof value === 'string') {
+                  apiText = value;
+                  break;
+                } else if (value instanceof Object) {
+                  result = value;
+                }
+              }
+            }
+            apiText ? typing(apiText) : typing(text);
+          },
+          error: function(xhr, status, error) {
+            if (error) {
+              console.error('Failed to request https://api.xygeng.cn/one:', error);
+            }
+            typing(text);
+          }
+        })
+      
+      }else{
+        typing(text);
+      }
+    })(window, document);</script><div class="pjax-reload"><script>Fluid.utils.createScript("https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js",function(){var t,o=jQuery("#toc");0!==o.length&&window.tocbot&&(t=jQuery("#board-ctn").offset().top,window.tocbot.init(Object.assign({tocSelector:"#toc-body",contentSelector:".markdown-body",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",scrollSmooth:!0,includeTitleTags:!0,headingsOffset:-t},CONFIG.toc)),0<o.find(".toc-list-item").length&&o.css("visibility","visible"),Fluid.events.registerRefreshCallback(function(){if("tocbot"in window){tocbot.refresh();var t=jQuery("#toc");if(0===t.length||!tocbot)return;0<t.find(".toc-list-item").length&&t.css("visibility","visible")}}))})</script><script data-pjax>var relativeDate=function(){var t,e,i,n,m=document.getElementById("updated-time");m&&(e=/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/,(i=(t=m.textContent).match(e))&&(n=moment(i[0]).fromNow(),m.textContent=t.replace(e,n)),m.style.display="")};Fluid.utils.createScript("https://lib.baomitu.com/moment.js/2.29.4/moment.min.js",function(){"zh-cn".startsWith("en")?relativeDate():Fluid.utils.createScript("https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js",function(){relativeDate()})})</script><script src="https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js"></script><script>Fluid.plugins.codeWidget()</script><script>Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });</script><script>Fluid.utils.createScript("https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js",function(){Fluid.plugins.fancyBox()})</script><script>Fluid.plugins.imageCaption()</script><script defer="defer" src="/js/leancloud.js"></script><script src="/js/local-search.js"></script><script>console.log("hello")</script><script src="/js/img-lazyload.js"></script></div><script type="text/javascript" src="/js/setting.js"></script><div id="sc-post"></div><script src="/js/boot.js"></script><script src="/assets/barrager/barrager.js"></script><link rel="stylesheet" type="text/css" href="/assets/barrager/barrager.css"><script>var datas = [];
+    var looper;
+    var json = [], tags = [], coms = [];
+    json.length === 0 && (json = getJson(), datas = datas.concat(json));
+    tags.length === 0 && (tags = getTags(), datas = datas.concat(tags));
+    coms.length === 0 && (coms = getComments(), datas = datas.concat(coms));
+    
+    // showBarrager(datas)
+    //json
+    function getJson(){
+        var items = [];
+        $.getJSON('/assets/barrager/barrager.json', function (data) {
+            items = data;
+        })
+        return items;
+    }
+
+    //标签
+    function getTags(){
+        var items = [];
+        var tags = document.querySelectorAll(".post-meta > .print-no-link");
+        if(tags.length == 0) return [];
+        tags.forEach(item => {
+            let text = {
+                'img': '/img/avatar.png', //图片 
+                'info': item.innerHTML, //文字 
+                'href': item.getAttribute("href"), //链接 
+                'close': true, //显示关闭按钮 
+                'speed': Math.floor(Math.random() * 8) + 10, //延迟,单位秒,默认8
+                'bottom': Math.floor(Math.random() * (innerHeight - 140)) + 70, //距离底部高度,单位px,默认随机 
+                'color': '#fff', //颜色,默认白色 
+                'old_ie_color': '#000000', //ie低版兼容色,不能与网页背景相同,默认黑色 
+            }
+            items.push(text);
+        })
+        return items;
+    }
+    
+    //评论
+    function getComments(){
+        var items = [];
+        var cards = document.querySelectorAll("#waline .wl-cards .wl-card-item");
+        cards.forEach(card => {
+            let author = card.querySelector(".wl-nick").innerHTML;
+            let content = card.querySelector(".wl-content p").innerHTML;
+            let img = card.querySelector(".wl-user > img").getAttribute("src");
+            let text = {
+                'img': img, //图片 
+                'info': author + ":" + content, //文字 
+                'href': "#", //链接 
+                'close': true, //显示关闭按钮 
+                'speed': Math.floor(Math.random() * 8) + 10, //延迟,单位秒,默认8
+                'bottom': Math.floor(Math.random() * (innerHeight - 140)) + 70, //距离底部高度,单位px,默认随机 
+                'color': '#fff', //颜色,默认白色 
+                'old_ie_color': '#000000', //ie低版兼容色,不能与网页背景相同,默认黑色 
+            }
+            items.push(text);
+        })
+        return items;
+    }
+
+    
+    
+    function addMessage() {
+        var item = {
+            'img':'/img/avatar.png', //图片 
+            'info':'弹幕文字信息', //文字 
+            'href':'#', //链接 
+            'close':true, //显示关闭按钮 
+            'speed':8, //延迟,单位秒,默认8
+            'bottom':70, //距离底部高度,单位px,默认随机 
+            'color':'#fff', //颜色,默认白色 
+            'old_ie_color':'#000000', //ie低版兼容色,不能与网页背景相同,默认黑色 
+        }
+        $('body').barrager(item);
+    }
+    function showBarrager(items){
+        //每条弹幕发送间隔
+        var looper_time = 3 * 1000;
+        //var  = data;
+        //弹幕总数
+        var total = 0;
+        //是否首次执行
+        var run_once = true;
+        //弹幕索引
+        var index = 0;
+        
+        
+        //先执行一次
+        //barrager();
+
+        setInterval(barrager, looper_time);
+        function barrager() {
+            if (run_once) {
+                total = item ? items.length : 0;
+                index = 0;
+                run_once = false;
+
+                
+            }
+            if(total > 0){
+                //发布一个弹幕
+                $('body').barrager(items[index]);
+            }
+            
+            //索引自增
+            index++;
+            //所有弹幕发布完毕，清除计时器。
+            if (index == total) {
+                // clearInterval(looper);
+                run_once = true;
+                index = 0;
+            }
+        }
+    }
+
+    function clearBarrager(){
+        if(looper){
+            clearInterval(looper);
+            looper = null;
+        }
+        $.fn.barrager.removeAll();
+    }</script><noscript><div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div></noscript><script type="text/javascript" src="/assets/js/fireworks.js" defer="defer"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script src="/assets/js/pjax.js"></script><script>var meting_api="https://api.obdo.cc/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r"</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.1/aplayer/APlayer.min.css"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><link rel="stylesheet" type="text/css" href="/assets/css/aplayer.css"><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" listfolded="true" fixed="true" data-lrctype="0" order="random" volume="0.7"></meting-js></body></html>
